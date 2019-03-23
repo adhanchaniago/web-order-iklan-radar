@@ -1,26 +1,43 @@
 <?php
 	
-	function addPelanggan($user_id, $nama, $perusahaan, $alamat_kantor, $alamat_pemesan, $telepon) {
+	function addPelanggan($data) {
 
 		global $mysqli;
+
+		$arr_field = array();
+		$arr_value = array();
+
+		//pecahkan array field dan value
+		foreach ($data as $field => $value) {
+			$arr_field[] = $field;
+			$arr_value[] = "'".$value."'";
+		}
+
+		//gabungkan array field : field1, field2, dst..
+		$fields = implode(',', $arr_field);
+		$values = implode(',',$arr_value);
+	
+		$SQL = "INSERT INTO T_pelanggan (".$fields.") VALUES (".$values.")";	
+	
+		$mysqli->query($SQL);
 		
-		$mysqli->query("INSERT INTO T_pelanggan(
-												user_id,
-												nama,
-												nama_perusahaan,
-												alamat_kantor,
-												alamat_pemesan,
-												no_telepon
-												) 
+		// $mysqli->query("INSERT INTO T_pelanggan(
+		// 										user_id,
+		// 										nama,
+		// 										nama_perusahaan,
+		// 										alamat_kantor,
+		// 										alamat_pemesan,
+		// 										no_telepon
+		// 										) 
 						
-						VALUES (
-								'".$user_id."',
-								'".$nama."',
-								'".$perusahaan."',
-								'".$alamat_kantor."',
-								'".$alamat_pemesan."',
-								'".$telepon."')"
-						);
+		// 				VALUES (
+		// 						'".$user_id."',
+		// 						'".$nama."',
+		// 						'".$perusahaan."',
+		// 						'".$alamat_kantor."',
+		// 						'".$alamat_pemesan."',
+		// 						'".$telepon."')"
+		// 				);
 		
 		return true;
 	}

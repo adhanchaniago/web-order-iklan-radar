@@ -1,4 +1,4 @@
-<?php require_once "../functions.php"; require_once "../themes/header.php"; ?>
+<?php require_once "../functions.php"; require_once "../themes/header.php"; ob_start();?>
 	<!-- Page content of course! -->
 <img src="<?php site('url');?>assets/images/header.jpg" style="margin-left: 250px; width: 60%; height: 200px;">
 <main class="bs-docs-masthead" id="content" role="main">
@@ -67,10 +67,10 @@
     $data = array(
               'user_id'=>$user_id,
               'nama'=>$nama,
-              'perusahaan'=>$perusahaan,
-              'alamat_pemesan'=>$alamat_pemesan,
+              'nama_perusahaan'=>$perusahaan,
               'alamat_kantor'=>$alamat_kantor,
-              'telepon'=$telepon
+              'alamat_pemesan'=>$alamat_pemesan,
+              'no_telepon'=>$telepon
             );
 
     addPelanggan($data);
