@@ -21,24 +21,6 @@
 	
 		$mysqli->query($SQL);
 		
-		// $mysqli->query("INSERT INTO T_pelanggan(
-		// 										user_id,
-		// 										nama,
-		// 										nama_perusahaan,
-		// 										alamat_kantor,
-		// 										alamat_pemesan,
-		// 										no_telepon
-		// 										) 
-						
-		// 				VALUES (
-		// 						'".$user_id."',
-		// 						'".$nama."',
-		// 						'".$perusahaan."',
-		// 						'".$alamat_kantor."',
-		// 						'".$alamat_pemesan."',
-		// 						'".$telepon."')"
-		// 				);
-		
 		return true;
 	}
 
