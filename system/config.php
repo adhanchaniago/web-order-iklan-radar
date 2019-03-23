@@ -8,6 +8,6 @@ define('DB_PASSWORD', 'root');
 
 define('DB_HOST', 'localhost');
 
-define('SITE_URL', 'http://localhost/class/');
+define('SITE_URL', 'http://localhost/web-order-iklan-radar/');
 
 ?>
